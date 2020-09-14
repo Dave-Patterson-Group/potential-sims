@@ -1,14 +1,14 @@
 function paulTutorial()
 %Generating DC electrodes results at 1 V since they scale easily
-resultFarLeft = paulTrapFields(1,1);
-resultLeft = paulTrapFields(2,1);
-resultCenter = paulTrapFields(3,1);
-resultRight = paulTrapFields(4,1);
-resultFarRight = paulTrapFields(5,1);
+resultFarLeft = paulFields(1,1);
+resultLeft = paulFields(2,1);
+resultCenter = paulFields(3,1);
+resultRight = paulFields(4,1);
+resultFarRight = paulFields(5,1);
 
 %Generating RF result at 100V since, although the true potential does
 %scale, the pseudopotential does not
-resultRF = paulTrapFields(6,100);%<= Change from 100 V to a new RF amplitude
+resultRF = paulFields(6,100);%<= Change from 100 V to a new RF amplitude
 
 % Figures 1 and 2 are the radial potential and pseudopotential, ignoring
 % the DC electrode potentials, since the DC electrodes where the ions
