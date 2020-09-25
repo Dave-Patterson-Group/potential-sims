@@ -50,7 +50,9 @@ for i = 2:numTimes
 end
 amps = zeros(numTimes,length(results));
 for l = 1:length(zOffsetArray)
-    amps = amps + ampsRK14(1:end-1,:,l); %Combining all amplitudes into one neat package for plotting
+    if ~isnan(ampsRK14(1:end-1,:,l))
+        amps = amps + ampsRK14(1:end-1,:,l); %Combining all amplitudes into one neat package for plotting
+    end
 end
 trajectory = trajectory * 1e3; %Converting back to mm
 % 
