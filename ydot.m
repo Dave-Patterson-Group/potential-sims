@@ -15,7 +15,7 @@ newCollision = 0;
 %Calculating the gradient, if it gets NaN, it sets it equal to 0 and adds
 %to the collisions counter, assuming it hit a wall
 for i = 1:(length(results))
-    if tempAmps(i) ~= 0
+    if ~isnan(tempAmps(i))
         [tempgradX,tempgradY,tempgradZ] = evaluateGradient(results(i),x,y,z);
         if isnan(tempgradX) || isnan(tempgradY) || isnan(tempgradZ)
             newCollision = newCollision + 1;
