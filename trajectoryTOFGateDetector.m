@@ -6,8 +6,8 @@ gateOffTime = 34.325e-6;
 gateOnTime = 34.85e-6;
 
 syms t;
-symAmpsAccel(t) = [90*heaviside(t-accelTime), 24.3, 0, 0, 0]; % <== Change Voltages here
-symAmpsGateDet(t) = [0, 0, -2000, 20*(1 - heaviside(t-gateOffTime) + heaviside(t-gateOnTime)), -20*(1 - heaviside(t-gateOffTime) + heaviside(t-gateOnTime))];
+symAmpsAccel(t) = [90*heaviside(t-accelTime), 24.3, nan, nan, nan]; % <== Change Voltages here
+symAmpsGateDet(t) = [nan, nan, -2000, 20*(1 - heaviside(t-gateOffTime) + heaviside(t-gateOnTime)), -20*(1 - heaviside(t-gateOffTime) + heaviside(t-gateOnTime))];
 symAmpsCell = {symAmpsAccel,symAmpsGateDet};
 zOffsetArray = [0 365.5];
 zSwitchArray = [367];
