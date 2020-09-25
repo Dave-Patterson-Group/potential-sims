@@ -9,9 +9,9 @@ paulOffTime = 42.0e-6;
 paulOnTime = 52.0e-6;
 angFreq = 2 * pi * RFfreq;
 syms t;
-symAmpsAccel(t) = [90*heaviside(t-accelTime), 24.3, 0, 0, 0, 0, 0, 0, 0, 0,]; % <== Change Voltages here
-symAmpsGate(t) = [0, 0, 20*(1 - heaviside(t-gateOffTime) + heaviside(t-gateOnTime)), -20*(1 - heaviside(t-gateOffTime) + heaviside(t-gateOnTime)), 0, 0, 0, 0, 0, 0,];
-symAmpsPaulLoading(t) = [0, 0, 0, 0, 88*(1 - heaviside(t-paulOffTime) + heaviside(t-paulOnTime)), 0, 60, 0, 60, 100*cos(angFreq * t)];
+symAmpsAccel(t) = [90*heaviside(t-accelTime), 24.3, nan, nan, nan, nan, nan, nan, nan, nan]; % <== Change Voltages here
+symAmpsGate(t) = [nan, nan, 20*(1 - heaviside(t-gateOffTime) + heaviside(t-gateOnTime)), -20*(1 - heaviside(t-gateOffTime) + heaviside(t-gateOnTime)), nan, nan, nan, nan, nan, nan];
+symAmpsPaulLoading(t) = [nan, nan, nan, nan, 88*(1 - heaviside(t-paulOffTime) + heaviside(t-paulOnTime)), 0, 60, 0, 60, 100*cos(angFreq * t)];
 symAmpsCell = {symAmpsAccel,symAmpsGate,symAmpsPaulLoading};
 zOffsetArray = [0 365.5 446];
 zSwitchArray = [367 401];
